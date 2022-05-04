@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="La página de contacto es una de las más importantes en tu sitio web. Para la mayoría de las empresas, suele ser una de las páginas más visitadas.">
+    <meta name="keywords" content="FOTOGRAFIA, FOTOGRAFIA ARTISTICA, CONTACTO, CONTACO DE SERVICIO, FOTOGRAFIA DE MODA, CONTACO BUENOS AIRES, CONTACTO DE SERVICOS FOTOGRAFIA">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="shortcut icon" href="assets/logo/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+    crossorigin="anonymous"
+  />
+    <title>CONTACTO</title>
+</head>
+<body>
+</header>
+  <nav>
+    <nav class="navbar">
+      <img class="logo" src="../assets/logo/camera.png" alt="logo-estudio46">
+      <ul class="menu" >
+    <a href="../index.html">inicio</a>
+    <a href="../pages/portfolio.html">portolio</a>
+    <a href="../pages/sobre nosotros.html">sobre nosotros</a>
+    <a href="../pages/servicios.html">servicios</a>
+    <a href="../pages/contacto.html">contacto</a>
+   </nav>
+  </header>
+
+  
+    
+      <div class="container my-4">
+        <form id="backForm" action="procesar.php" method="post">
+            <fieldset>
+                <legend>Contacto</legend>
+            
+            <div class="formulario form-group">
+            <label for="nombre">Nombre: </label>
+            <input type="text" name="nombre"  class="nombre form-control">
+            </div>
+    
+            <div class="formulario form-group">
+            <label for="apellido">Apellido: </label>
+            <input type="text" name="apellido"  class="apellido form-control">
+            </div>
+    
+            <div class=" formulario form-group">
+                <label for="email">Email: </label>
+                <input type="email" name="email"  required class=" email form-control">
+            </div>
+    
+            <div class="form-group">
+                <label for="telefono">Telefono: </label>
+                <input type="tel" name="telefono" class="form-control">
+            </div>
+    
+            <h4 class="my-3">Dejame tu comentario</h4>
+            <textarea class="form-control" name="comentario" id="" cols="30" rows="10"></textarea>
+    
+    
+            <!--Botones -->
+            <div>
+            <input class="btn btn-outline-primary my-2" type="submit" value="Enviar">
+            </div>
+            <div>
+            <!--Boton Creado con Mixin Sass-->
+            <input class="btn btn-outline-danger" type="reset" value="Borrar Formulario">
+            </div>
+            
+          </fieldset>
+        </form>
+     
+    </div>
+    
+    <footer class="pieDepagina">
+        <div class="pieDepagina">
+          <p>Todos los derechos reservados</p>
+        </div>
+  
+        <div class="pieDepagina">
+          <p>Seguinos en nuestras redes sociales</p>
+        </div>
+  
+        <div class="redes-sociales">
+          <i class="fa-brands fa-behance"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-linkedin-in"></i>
+        </div>
+      </footer>
+    
+     <script src="../libs/bootstrap/js/bootstrap.min.js"></script> 
+ 
+    </body>
+
+    
+    </html>

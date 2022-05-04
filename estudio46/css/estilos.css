@@ -1,0 +1,314 @@
+* {
+  margin: 4px;
+  padding: 8px;
+  border-radius: 15px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+p {
+  color: white;
+}
+h1 {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  size: 100px;
+}
+h2 {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+li {
+  color: rgb(0, 0, 0);
+  size: 60px;
+}
+a {
+  color: rgb(29, 87, 7);
+  size: 40px;
+}
+.bordesredondeados {
+  border: solid 5px;
+  color: rgb(255, 255, 255);
+  background-color: #000000;
+}
+h3 {
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+img {
+  width: 350px;
+  height: auto;
+  margin: auto;
+  border-radius: 20px;
+}
+body {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; ;
+}
+.navbar {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  align-items: center;
+  background-color: #000000;
+  background-image: linear-gradient(
+    to left,
+    rgb(80, 19, 221),
+    rgb(224, 44, 20)
+  );
+}
+
+
+.navbar .logo {
+  width: 80px;
+  height: 80px;
+  grid-column: 2/3;
+  animation-name: rotar_logo;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-duration: 3s;
+  animation-delay: 3s;
+}
+
+@keyframes rotar_logo {
+  0% {
+    transform: rotateX(0deg);
+  }
+
+  50% {
+    transform: scale(1.4);
+  }
+
+  100% {
+    transform: rotateX(360);
+  }
+}
+
+.navbar .menu {
+  display: flex;
+  justify-content: space-around;
+  grid-column: 4/7;
+}
+
+.navbar .menu li {
+  list-style: none;
+}
+
+.navbar .menu a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.navbar .menu-bar {
+  display: none;
+}
+
+.navbar .shop {
+  grid-column: 8/9;
+}
+
+/*Main*/
+.principal {
+  height: 80vh;
+  background-image: url('../assets/img/fondo66.webp');
+  background-size: cover;
+  background-position: center;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+}
+
+.principal .contenido {
+  grid-column: 7/10;
+  grid-row: 3/6;
+}
+
+.principal h3 {
+  font-size: 25px;
+  font-weight: 300;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+
+.principal h1 {
+  font-size: 35px;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  
+}
+
+.principal p {
+  font-weight: 200;
+  font-size: 20px;
+  color: rgb(255, 247, 247);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.principal .boton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'poppins';
+  font-size: 16px;
+  font-weight: 700;
+  color: black;
+  padding: 14px 30px;
+  border-radius: 30px;
+  margin-top: 15px;
+  cursor: pointer;
+  /*Transiciones*/
+  transition: all 3s;
+}
+
+.principal .boton:hover {
+  transform: translate(-10px);
+  color: rgb(255, 255, 255);
+}
+
+/*footer*/
+.pieDepagina {
+  display: flex;
+  height: 100px;
+  align-items: center;
+  /*background-color: #808080;*/
+  color: yellow;
+  grid-template-areas: 'desarrollado seguime redes-sociales';
+  background-image: linear-gradient(135deg,rgb(80, 19, 221),  10%, #070707 100%);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.pieDepagina .desarrollado {
+  grid-area: desarrollado;
+  display: flex;
+  justify-content: center;
+  animation-name: flash;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+.pieDepagina .seguime {
+  grid-area: seguime;
+  display: flex;
+  justify-content: center;
+}
+
+.pieDepagina .redes-sociales {
+  grid-area: redes-sociales;
+  display: flex;
+  justify-content: space-around;
+  font-size: 20px;
+}
+
+/*Mediaqueries*/
+@media screen and (max-width: 600px) {
+  .navbar {
+    position: relative;
+  }
+
+  .navbar .shop {
+    display: none;
+  }
+
+  .navbar .menu-bar {
+    display: block;
+    grid-column: 8/9;
+    font-size: 30px;
+    cursor: pointer;
+  }
+
+  .navbar .menu {
+    display: none;
+  }
+
+  /*main*/
+  .principal .contenido {
+    grid-column: 8/11;
+    grid-row: 3/7;
+    margin-right: 10px;
+  }
+
+  .principal h1 {
+    font-size: 25px;
+  }
+
+  .artista-plastica {
+    animation-name: bounce;
+    animation-duration: 2s;
+  }
+
+  .principal p {
+    font-size: 14px;
+  }
+
+  .principal .boton {
+    font-size: 10px;
+    font-weight: 900;
+    color: yellow;
+    text-transform: uppercase;
+    background: black;
+    border: solid 1px yellow;
+  }
+
+  /*footer*/
+
+  .pieDepagina {
+    height: 80px;
+  }
+
+  .pieDepagina .seguime {
+    display: none;
+  }
+
+  .pieDepagina .desarrollado {
+    font-size: 15px;
+    display: none;
+  }
+ 
+}
+.tarjeta__parrafo {
+  line-height: 22px;
+  margin-bottom: 20px;
+  color: rgb(0, 0, 0);
+}
+@media (min-width: 601px) and (max-width: 900px) {
+  .navbar {
+    position: relative;
+  }
+
+  .navbar .shop {
+    display: none;
+  }
+
+  .navbar .menu-bar {
+    display: block;
+    grid-column: 8/9;
+    font-size: 30px;
+    cursor: pointer;
+  }
+
+  .navbar .menu {
+    display: none;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1024px) {
+  .navbar {
+    position: relative;
+  }
+
+  .navbar .shop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navbar .menu {
+    grid-column: 4/8;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-around;
+   }
+  
+}

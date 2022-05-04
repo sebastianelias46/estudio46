@@ -1,0 +1,162 @@
+
+$espaciado-card: 20px auto;
+$relleno-card:25px;
+$fondo-tarjeta: #F5E8C7;
+$color-title: #2E4C6D;
+
+.tarjeta__expo{
+    width: 50%;
+    margin: $espaciado-card;
+    padding: $relleno-card;
+    background: $fondo-tarjeta;
+    border-radius: 5px;
+}
+
+.tarjeta__img{
+    width: 500px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 12px 0px rgba(0, 0, 0, 0.1);
+}
+
+.tarjeta__title{
+    margin-top: 10px;
+    letter-spacing: 3px;
+    font-size: 24px;
+    color: $color-title;
+    font-weight: 500;
+    font-family: 'poppins', sans-serif;
+}
+
+.tarjeta__bajada{
+    font-size: 18px;
+    font-weight: 200;
+    font-family: 'poppins', sans-serif;
+}
+
+//FUNCION @EXTEND
+.tarjeta__malba{
+    @extend .tarjeta__expo;
+}
+
+.tarjeta__imgProa{
+    @extend .tarjeta__img;
+}
+
+.tarjeta__proa{
+    @extend .tarjeta__expo;
+}
+@for $i from 1 through 10 {
+    .col-#{$i}
+    {
+      font-size: $i * 10%;
+    }
+    
+  }
+
+
+$lista-colores: red, blue, green, gray;
+
+@each $color in $lista-colores {
+  .#{$color}{
+    background-color: $color;
+  }  
+}
+
+$arreglo-colores: (
+    gris1: #ccc,
+    gris2: #aeaeae,
+    gris3: #a4a4a4
+);
+
+@each $color, $valor in $arreglo-colores {
+    .fondo-#{$color}{
+        background-color: $valor;
+    }
+    
+}
+
+$redes: (
+    twitter: #55acee,
+    facebook: #3a5795,
+    send-mail: #c25e30
+
+);
+
+@each $red, $color in $redes {
+    .btn--#{$red}{
+        background-color: $color;
+    }
+    
+}
+
+
+
+$paleta: (
+    'primario': #F5E8C7,
+    'secundario': blue,
+    'success': pink
+
+);
+
+.div{
+    background-color: map-get($map: $paleta, $key: 'primario');
+    color: map-get($map: $paleta, $key: 'success' );
+}
+
+/*MAPS 2*/
+$encabezados:(
+  h1: 2.5em,
+  h2: 2em,
+  h3: 1em,
+  h4: .5em,
+);
+
+$h1: map-get($encabezados, h1 );
+
+h1{
+  font-size: $h1;
+}
+
+@each $encabezado, $size in $encabezados {
+  .#{$encabezado}{
+    font-size: $size;
+  }
+}
+
+//MIXINS CON PARAMETROS
+@mixin crearBordes($color, $size, $shadow){
+    border: $size solid $color;
+    border-radius: 8px;
+    box-shadow: 0px 0px $size $shadow;
+}
+
+.tarjeta__expo{
+    @include crearBordes($fondo-tarjeta, 2px, green);
+}
+
+.tarjeta__img{
+    @include crearBordes($color-title, 2px, black);
+}
+
+/*OTRO EJEMPLO DE MIXINS*/
+
+@mixin fuente ($color-fuente, $transformacion) {
+    text-transform: $transformacion;
+    color: $color-fuente;  
+}
+
+h1{
+    font-size: 2em;
+    @include fuente(red, uppercase);
+}
+
+h2{
+    font-size: .5em;
+    @include fuente(green,lowercase);
+    
+}
+
+h3{
+    font-size: .2em;
+    @include fuente(blue, capitalize);
+}
